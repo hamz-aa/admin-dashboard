@@ -40,6 +40,6 @@ mongoose
       console.log(`Server started at http://localhost:${PORT}`);
     });
     // only add data one time
-    User.insertMany(dataUser);
+    // User.insertMany(dataUser);
   })
   .catch((error) => console.log(`${error} did not connect`));
