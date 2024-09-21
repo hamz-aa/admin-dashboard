@@ -52,8 +52,8 @@ export const getTransactions = async (req, res) => {
 
     const transactions = await Transaction.find({
       $or: [
-        { cost: { $regex: new Regexp(search, "i") } },
-        { userId: { $regex: new Regexp(search, "i") } },
+        { cost: { $regex: new RegExp(search, "i") } },
+        { userId: { $regex: new RegExp(search, "i") } },
       ],
     })
       .sort(sortFormatted)
@@ -64,7 +64,7 @@ export const getTransactions = async (req, res) => {
       name: { $regex: search, $options: "i" },
     });
 
-    res.status(200).json(transactions, total);
+    res.status(200).json({ transactions, total });
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
