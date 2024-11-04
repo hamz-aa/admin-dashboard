@@ -98,6 +98,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
           if (isDashboard) return v.slice(0, 3);
           return v;
         },
+        orient: "bottom",
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
